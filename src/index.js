@@ -22,7 +22,9 @@ app.use(morgan('combined'));
 app.post('/auth', async ({ body }, res) => {
     res.status(200).send({
         userId: '1',
-        success: true 
+        token: 'abc',
+        success: true,
+        expireIn: Data.Now() + 15 * 60 *1000
     });
 });
 
